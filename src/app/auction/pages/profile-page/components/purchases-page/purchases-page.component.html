@@ -1,0 +1,7 @@
+<div class="page-container">
+  <div class="items-container">
+    <ng-container *ngFor="let item of auctionedItems">
+      <app-purchase-item [auctionedItem]="item"></app-purchase-item>
+    </ng-container>
+  </div>
+</div>

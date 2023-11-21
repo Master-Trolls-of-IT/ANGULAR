@@ -1,0 +1,165 @@
+<div class="page-container">
+  <div class="progress-bar">
+    <div class="progress-step" [style.width]="progressWidth"></div>
+  </div>
+
+  <ng-container *ngIf="currentStep === 1">
+    <div class="content-container">
+      <h2>{{ 'pages.create-auction.first-step' | translate }}</h2>
+
+      <form class="form-group" [formGroup]="form">
+        <mat-error *ngIf="isFormError">
+          {{ 'pages.create-auction.error' | translate }}
+        </mat-error>
+
+        <mat-form-field>
+          <mat-label>{{ 'form.title.label' | translate }}</mat-label>
+          <input matInput formControlName="title" required (keydown.enter)="nextStep()">
+          <mat-error *ngIf="form.get('title')?.errors">
+            {{ 'form.title.error' | translate }}
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>{{ 'form.description.label' | translate }}</mat-label>
+          <textarea class="text-area" matInput formControlName="description" required (keydown.enter)="nextStep()"></textarea>
+          <mat-error *ngIf="form.get('description')?.errors">
+            {{ 'form.description.error' | translate }}
+          </mat-error>
+        </mat-form-field>
+      </form>
+
+      <div class="button-container">
+        <button type="button" mat-raised-button color="warn" (click)="goHome()">{{ 'button.cancel' | translate }}</button>
+        <button type="button" mat-raised-button color="primary" (click)="nextStep()">{{ 'button.next-step' | translate }}</button>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="currentStep === 2">
+    <div class="content-container">
+      <h2>{{ 'pages.create-auction.second-step' | translate }}</h2>
+
+      <form class="form-group" [formGroup]="form">
+        <mat-error *ngIf="isFormError">
+          {{ 'pages.create-auction.error' | translate }}
+        </mat-error>
+
+        <mat-form-field>
+          <mat-label>{{ 'form.category.label' | translate }}</mat-label>
+          <mat-select formControlName="category" (selectionChange)="onCategorySelected($event.value)">
+            <mat-option value="{{AuctionCategory.Art}}">{{ 'pages.auction.arts' | translate }}</mat-option>
+            <mat-option value="{{AuctionCategory.Books}}">{{ 'pages.auction.books' | translate }}</mat-option>
+            <mat-option value="{{AuctionCategory.Vehicles}}">{{ 'pages.auction.vehicles' | translate }}</mat-option>
+          </mat-select>
+          <mat-error *ngIf="form.get('category')?.errors">
+            {{ 'form.category.error' | translate }}
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>{{ 'form.state.label' | translate }}</mat-label>
+          <mat-select formControlName="state">
+            <mat-option value="{{StateEnum.Poor}}">{{ 'form.state.poor' | translate }}</mat-option>
+            <mat-option value="{{StateEnum.Good}}">{{ 'form.state.good' | translate }}</mat-option>
+            <mat-option value="{{StateEnum.VeryGood}}">{{ 'form.state.very-good' | translate }}</mat-option>
+            <mat-option value="{{StateEnum.New}}">{{ 'form.state.new' | translate }}</mat-option>
+          </mat-select>
+          <mat-error *ngIf="form.get('state')?.errors">
+            {{ 'form.state.error' | translate }}
+          </mat-error>
+        </mat-form-field>
+
+        <mat-selection-list class="mat-selection-list" formControlName="photos">
+          <mat-list-option *ngFor="let photo of photos" [value]="photo">
+            <img class="thumbnail" src="{{ photo.src.original }}" alt="{{ photo.alt }}">
+          </mat-list-option>
+        </mat-selection-list>
+        <mat-error *ngIf="form.get('photos')?.errors">
+          {{ 'form.photos.error' | translate }}
+        </mat-error>
+      </form>
+
+      <div class="button-container">
+        <button type="button" mat-raised-button color="warn" (click)="previousStep()">{{ 'button.previous-step' | translate }}</button>
+        <button type="button" mat-raised-button color="primary" (click)="nextStep()">{{ 'button.next-step' | translate }}</button>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="currentStep === 3">
+    <div class="content-container">
+      <h2>{{ 'pages.create-auction.third-step' | translate }}</h2>
+
+      <form class="form-group" [formGroup]="form">
+        <mat-error *ngIf="isFormError">
+          {{ 'pages.create-auction.error-amount' | translate }}
+        </mat-error>
+
+        <mat-form-field>
+          <mat-label>{{ 'form.initial-price.label' | translate }}</mat-label>
+          <input matInput type="number" formControlName="initialPrice" required pattern="[0-9]*">
+          <mat-error *ngIf="form.get('initialPrice')?.hasError('required')">
+            {{ 'form.initial-price.error-required' | translate }}
+          </mat-error>
+          <mat-error *ngIf="form.get('initialPrice')?.hasError('pattern')">
+            {{ 'form.initial-price.error-pattern' | translate }}
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>{{ 'form.final-price.label' | translate }}</mat-label>
+          <input matInput type="number" formControlName="finalPrice" pattern="[0-9]*">
+          <mat-error *ngIf="form.get('finalPrice')?.hasError('pattern')">
+            {{ 'form.final-price.error-pattern' | translate }}
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>{{ 'form.duration.label' | translate }}</mat-label>
+          <input matInput type="number" formControlName="duration" pattern="[0-9]*">
+          <mat-error *ngIf="form.get('duration')?.hasError('required')">
+            {{ 'form.duration.error-required' | translate }}
+          </mat-error>
+          <mat-error *ngIf="form.get('duration')?.hasError('pattern')">
+            {{ 'form.duration.error-pattern' | translate }}
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>{{ 'form.localisation.label' | translate }}</mat-label>
+          <input matInput formControlName="localisation" required (keydown.enter)="nextStep()">
+          <mat-error *ngIf="form.get('localisation')?.errors">
+            {{ 'form.localisation.error' | translate }}
+          </mat-error>
+        </mat-form-field>
+      </form>
+
+      <div class="button-container">
+        <button type="button" mat-raised-button color="warn" (click)="previousStep()">{{ 'button.previous-step' | translate }}</button>
+        <button type="button" mat-raised-button color="primary" (click)="nextStep()">{{ 'button.next-step' | translate }}</button>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="currentStep === 4">
+    <div class="content-container">
+      <h2>{{ 'pages.create-auction.last-step' | translate }}</h2>
+
+      <div class="summary-container">
+        <app-summary [auctionItem]="auctionedItemProduct"></app-summary>
+      </div>
+
+      <div class="button-container">
+        <button type="button" mat-raised-button color="warn" (click)="previousStep()">{{ 'button.previous-step' | translate }}</button>
+        <button type="button" mat-raised-button color="primary" (click)="onSubmit()">{{ 'button.confirm' | translate }}</button>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="currentStep != 2 && currentStep != 4">
+    <div class="blobs-container">
+      <img src="assets/auction/create-auction/blobs-wave.svg" alt="Blobs wave">
+    </div>
+  </ng-container>
+</div>

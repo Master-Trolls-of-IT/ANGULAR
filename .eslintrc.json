@@ -1,0 +1,45 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:angular/johnpapa"
+  ],
+  "plugins": ["@typescript-eslint", "angular", "prettier"],
+  "ignorePatterns": ["**/*.html"],
+  "rules": {
+    "prettier/prettier": "warn",
+    "no-debugger": "error",
+    "@typescript-eslint/explicit-function-return-type": "warn",
+    "@typescript-eslint/no-explicit-any": "warn",
+    "@typescript-eslint/no-unused-vars": "warn",
+    "angular/controller-as-vm": [
+      "error", "never"
+    ],
+    "angular/module-setter": "error",
+    "angular/no-controller": "error",
+    "angular/on-watch": "error",
+    "angular/deferred": "error",
+    "angular/window-service": "off"
+  },
+  "settings": {
+    "angular": 1,
+    "import/resolver": {
+      "alias": {
+        "map": [[
+          "~", "./src"
+        ]],
+        "extensions": [
+          ".ts", ".js", ".jsx", ".json"
+        ]
+      }
+    }
+  },
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "globals": {
+    "angular": true
+  }
+}

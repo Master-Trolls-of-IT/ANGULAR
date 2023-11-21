@@ -1,0 +1,57 @@
+<div class="page-content">
+  <p class="object">
+    <span class="title">{{ 'pages.summary.title' | translate }}</span>
+    {{auctionItem.title}}
+  </p>
+  <p class="object">
+    <span class="title">{{ 'pages.summary.description' | translate }}</span>
+    {{auctionItem.description}}
+  </p>
+  <p class="object">
+    <span class="title">{{ 'pages.summary.category' | translate }}</span>
+    {{chooseRightCategory}}
+  </p>
+  <p class="object">
+    <span class="title">{{ 'pages.summary.state' | translate }}</span>
+    {{chooseRightState}}
+  </p>
+  <p class="object">
+    <span class="title">{{ 'pages.summary.initial-price' | translate }}</span>
+    {{auctionItem.initialPrice}}€
+  </p>
+  <p class="object">
+    <span class="title">{{ 'pages.summary.current-price' | translate }}</span>
+    {{auctionItem.initialPrice}}€
+  </p>
+  <ng-container *ngIf="auctionItem.finalPrice; else finalPriceDontExist">
+    <p class="object">
+      <span class="title">{{ 'pages.summary.final-price' | translate }}</span>
+      {{auctionItem.finalPrice}}€
+    </p>
+  </ng-container>
+  <ng-template #finalPriceDontExist>
+    <p class="object">
+      <span class="title">{{ 'pages.summary.final-price' | translate }}</span>
+      {{ 'pages.summary.final-price-dont-exist' | translate }}
+    </p>
+  </ng-template>
+  <p class="object">
+    <span class="title">{{ 'pages.summary.duration' | translate }}</span>
+    {{auctionItem.time}}h
+  </p>
+  <p class="object">
+    <span class="title">{{ 'pages.summary.localisation' | translate }}</span>
+    {{auctionItem.localisation}}
+  </p>
+
+  <div>
+    <p class="object">
+      <span class="title">{{ 'pages.summary.photos' | translate }}</span>
+    </p>
+    <div class="pictures-container">
+      <div *ngFor="let photo of photos">
+        <img src="{{photo.src.original}}" alt="{{photo.alt}}">
+      </div>
+    </div>
+  </div>
+</div>

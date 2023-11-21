@@ -1,0 +1,38 @@
+<div class="page-container">
+  <p-toast key='profile-save' class="custom-toast"></p-toast>
+  <div class="blobs-container">
+    <img src="./assets/auction/profile/blobs-wave.svg" alt="Blobs wave"/>
+  </div>
+
+  <div class="content-container">
+    <div class="tab-container">
+      <div class="tab" (click)="selectTab('profile')" [class.selected]="selectedTab === 'profile'">
+        {{ 'pages.profile.profile' | translate }}
+      </div>
+      <span class="divider">|</span>
+      <div class="tab" (click)="selectTab('purchases')" [class.selected]="selectedTab === 'purchases'">
+        {{ 'pages.profile.purchases' | translate }}
+      </div>
+      <span class="divider">|</span>
+      <div class="tab" (click)="selectTab('auctions')" [class.selected]="selectedTab === 'auctions'">
+        {{ 'pages.profile.auctions' | translate }}
+      </div>
+    </div>
+
+    <ng-container *ngIf="selectedTab === 'profile'">
+      <app-user-profile [user]="user"></app-user-profile>
+      <div class="logout-button">
+        <button type="button" mat-raised-button color="primary" (click)="changeLanguage()">{{ 'button.change-language' | translate }}</button>
+        <button type="button" mat-raised-button color="warn" (click)="logout()">{{ 'button.logout' | translate }}</button>
+      </div>
+    </ng-container>
+
+    <ng-container *ngIf="selectedTab === 'purchases'">
+      <app-purchases-page [auctionedItems]="user.auctionHistory"></app-purchases-page>
+    </ng-container>
+
+    <ng-container *ngIf="selectedTab === 'auctions'">
+      <app-purchases-page [auctionedItems]="userAuctions"></app-purchases-page>
+    </ng-container>
+  </div>
+</div>

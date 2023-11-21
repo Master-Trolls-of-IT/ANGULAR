@@ -1,0 +1,176 @@
+{
+  "pages": {
+    "login": {
+      "login": "Login",
+      "register": "Register",
+      "welcome": "Welcome !",
+      "error": "Email or password is incorrect."
+    },
+    "register": {
+      "register": "Register",
+      "avatar": "Choose an avatar:",
+      "preference": {
+        "label": "Select your preferences:",
+        "arts": "Arts",
+        "books": "Books",
+        "vehicles": "Vehicles"
+      },
+      "error": "One of the fields is missing or invalid."
+    },
+    "auction": {
+      "search": "Search for products",
+      "price": "Current price",
+      "timer": "Time Left",
+      "arts": "Arts",
+      "books": "Books",
+      "vehicles": "Vehicles"
+    },
+    "profile": {
+      "profile": "Profile",
+      "purchases": "Purchases",
+      "auctions": "Auctions",
+      "notifications": "Notifications"
+    },
+    "create-auction": {
+      "create-auction": "Create your auction",
+      "first-step": "Creating an auction: First step",
+      "second-step": "Creating an auction: Second step",
+      "third-step": "Creating an auction: Third step",
+      "last-step": "Creating an auction: Summary",
+      "error": "One of the fields is missing or invalid.",
+      "error-amount": "One of the fields is missing or the final price is lower than the maximum price."
+    },
+    "summary": {
+      "title": "Title:  ",
+      "description": "Description:  ",
+      "category": "Category:  ",
+      "state": "State:  ",
+      "initial-price": "Initial Price:  ",
+      "current-price": "Current Price:  ",
+      "final-price": "Final Price:  ",
+      "final-price-dont-exist": "Not specified",
+      "duration": "Duration (hours):  ",
+      "localisation": "Localisation:  ",
+      "photos": "Photos:",
+      "bidder": "Last bidder:  "
+    }
+  },
+  "form": {
+    "firstname": {
+      "label": "First name",
+      "placeholder": "Enter your firstname",
+      "error": "The first name field mut be at least 3 characters long."
+    },
+    "lastname": {
+      "label": "Last name",
+      "placeholder": "Enter your lastname",
+      "error": "The last name field mut be at least 3 characters long."
+    },
+    "birthdate": {
+      "label": "Birthdate",
+      "error": "You must be at least 18 years old."
+    },
+    "email": {
+      "label": "Email",
+      "placeholder": "Enter your email",
+      "error": "The email field is invalid."
+    },
+    "password": {
+      "label": "Password",
+      "placeholder": "Enter your password",
+      "error": "The password field is required."
+    },
+    "title": {
+      "label": "Title",
+      "placeholder": "Enter your title",
+      "error": "The title field must be at least 3 characters long."
+    },
+    "description": {
+      "label": "Description",
+      "placeholder": "Enter your description",
+      "error": "The description field mut be at least 15 characters long."
+    },
+    "category": {
+      "label": "Choose a category",
+      "error": "You must choose a category."
+    },
+    "state": {
+      "label": "Choose a state",
+      "poor": "Bad condition",
+      "good": "Good condition",
+      "very-good": "very good condition",
+      "new": "Brand new",
+      "error": "You must choose a state."
+    },
+    "photos": {
+      "error": "You must choose at least 1 photo."
+    },
+    "initial-price": {
+      "label": "Start of auction price in €",
+      "error-required": "The amount is mandatory.",
+      "error-pattern": "Please enter a valid amount."
+    },
+    "current-price": {
+      "label": "Amount of the rebid (in €)",
+      "error": "Please enter a valid amount.",
+      "error-amount": "The amount must be higher than the current bid."
+    },
+    "final-price": {
+      "label": "Final purchase price (optional) in €",
+      "error-pattern": "Please enter a valid amount."
+    },
+    "auto-bid": {
+      "label": "Automatic bidding",
+      "error": "Please enter a valid amount."
+    },
+    "duration": {
+      "label": "Duration in hours (less than 24 hours)",
+      "error-required": "The duration is mandatory",
+      "error-pattern": "Please choose a valid duration and less than 24 hours."
+    },
+    "localisation": {
+      "label": "Localisation",
+      "error": "The location field must have at least 3 characters."
+    }
+  },
+  "button":  {
+    "cancel": "Cancel",
+    "login": "Login",
+    "logout": "Logout",
+    "register": "Register",
+    "auction": "Add an auction",
+    "save": "Save",
+    "confirm": "Confirm",
+    "next-step": "Next",
+    "previous-step": "Previous",
+    "bid": "Bid",
+    "auto-bid": "Activate",
+    "buy-now": "Buy now for ",
+    "change-language": "Change language"
+  },
+  "modal": {
+    "confirmation": {
+      "label": "Save changes",
+      "message": "Are you sure you want to save these changes?"
+    },
+    "logout": {
+      "label": "Logout",
+      "message": "Are you sure you want to log out?"
+    }
+  },
+  "toaster": {
+    "success": {
+      "save-change": {
+        "summary": "Save",
+        "detail": "Your changes have been successfully saved."
+      }
+    },
+    "info": {
+      "cancel-change": {
+        "summary": "Cancellation",
+        "detail": "Your changes have been successfully canceled."
+      }
+    },
+    "failure": {}
+  }
+}

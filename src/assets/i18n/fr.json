@@ -1,0 +1,177 @@
+{
+  "pages": {
+    "login": {
+      "login": "Connexion",
+      "register": "S'inscrire",
+      "welcome": "Bienvenue !",
+      "error": "L'e-mail ou le mot de passe est incorrect."
+    },
+    "register": {
+      "register": "Création de compte",
+      "avatar": "Choisissez un avatar :",
+      "preference": {
+        "label": "Sélectionnez vos préférences :",
+        "arts": "Arts",
+        "books": "Livres",
+        "vehicles": "Véhicules"
+      },
+      "error": "Un des champs est manquant ou invalide."
+    },
+    "auction": {
+      "search": "Rechercher des produits",
+      "price": "Prix actuel",
+      "final-price": "Prix final",
+      "timer": "Temps restant",
+      "arts": "Arts",
+      "books": "Livres",
+      "vehicles": "Véhicules"
+    },
+    "profile": {
+      "profile": "Profil",
+      "purchases": "Achats",
+      "auctions": "Enchères",
+      "notifications": "Notifications"
+    },
+    "create-auction": {
+      "create-auction": "Créer votre enchère",
+      "first-step": "Création d'une enchère : Première étape",
+      "second-step": "Création d'une enchère : Deuxième étape",
+      "third-step": "Création d'une enchère : Troisième étape",
+      "last-step": "Création d'une enchère : Récapitulatif",
+      "error": "Un des champs est manquant ou invalide.",
+      "error-amount": "Un des champs est manquant, le prix final est inférieur au prix maximal ou la durée est supérieure à 24 heures."
+    },
+    "summary": {
+      "title": "Titre :  ",
+      "description": "Description :  ",
+      "category": "Catégorie :  ",
+      "state": "État :  ",
+      "initial-price": "Prix initial :  ",
+      "current-price": "Prix actuel :  ",
+      "final-price": "Prix d'achat :  ",
+      "final-price-dont-exist": "Non renseigné",
+      "duration": "Durée (en heures) :  ",
+      "localisation": "Localisation :  ",
+      "photos": "Photos :",
+      "bidder": "Dernier investisseur :  "
+    }
+  },
+  "form": {
+    "firstname": {
+      "label": "Prénom",
+      "placeholder": "Saisir votre prénom",
+      "error": "Le champ prénom doit comporter au moins 3 caractères."
+    },
+    "lastname": {
+      "label": "Nom",
+      "placeholder": "Saisir votre nom",
+      "error": "Le champ doit comporter au moins 3 caractères."
+    },
+    "birthdate": {
+      "label": "Date de naissance",
+      "error": "Vous devez avoir au moins 18 ans."
+    },
+    "email": {
+      "label": "E-mail",
+      "placeholder": "Saisir votre e-mail",
+      "error": "Le champ e-mail n'est pas valide."
+    },
+    "password": {
+      "label": "Mot de passe",
+      "placeholder": "Saisir votre mot de passe",
+      "error": "Le champ mot de passe est obligatoire."
+    },
+    "title": {
+      "label": "Titre",
+      "placeholder": "Entrez un titre",
+      "error": "Le champ titre doit comporter au moins 3 caractères."
+    },
+    "description": {
+      "label": "Description",
+      "placeholder": "Entrez une description",
+      "error": "Le champ description doit comporter au moins 15 caractères."
+    },
+    "category": {
+      "label": "Choisissez une catégorie",
+      "error": "Vous devez choisir une catégorie."
+    },
+    "state": {
+      "label": "Choisissez un état",
+      "poor": "Mauvais état",
+      "good": "Bon état",
+      "very-good": "Très bon état",
+      "new": "Comme neuf",
+      "error": "Vous devez choisir un état."
+    },
+    "photos": {
+      "error": "Vous devez sélectionner au moins une photo."
+    },
+    "initial-price": {
+      "label": "Prix du début d'enchère en €",
+      "error-required": "Le montant est obligatoire.",
+      "error-pattern": "Veuillez saisir un montant valide."
+    },
+    "current-price": {
+      "label": "Montant de la réenchère (en €)",
+      "error": "Veuillez saisir un montant valide.",
+      "error-amount": "Le montant doit être supérieur à l'enchère actuel."
+    },
+    "final-price": {
+      "label": "Prix d'achat final (optionnel) en €",
+      "error-pattern": "Veuillez saisir un montant valide."
+    },
+    "auto-bid": {
+      "label": "Enchère automatique",
+      "error": "Veuillez saisir un montant valide."
+    },
+    "duration": {
+      "label": "Durée en heures (moins de 24 heures)",
+      "error-required": "La durée est obligatoire.",
+      "error-pattern": "Veuillez choisir une durée valide et de moins de 24 heures."
+    },
+    "localisation": {
+      "label": "Localisation",
+      "error": "Le champ localisation doit comporter au moins 3 caractères."
+    }
+  },
+  "button":  {
+    "cancel": "Annuler",
+    "login": "Se connecter",
+    "logout": "Se déconnecter",
+    "register": "Créer un compte",
+    "auction": "Ajouter une enchère",
+    "save": "Sauvegarder",
+    "confirm": "Confirmer",
+    "next-step": "Suivant",
+    "previous-step": "Précédent",
+    "bid": "Renchérir",
+    "auto-bid": "Activer",
+    "buy-now": "Acheter maintenant pour ",
+    "change-language": "Changer la langue"
+  },
+  "modal": {
+    "confirmation": {
+      "label": "Sauvegarder les changements",
+      "message": "Voulez-vous vraiment sauvegarder ces changements ?"
+    },
+    "logout": {
+      "label": "Déconnexion",
+      "message": "Voulez-vous vraiment vous déconnecter ?"
+    }
+  },
+  "toaster": {
+    "success": {
+      "save-change": {
+        "summary": "Sauvegarde",
+        "detail": "Vos changements ont bien été sauvegardés."
+      }
+    },
+    "info": {
+      "cancel-change": {
+        "summary": "Annulation",
+        "detail": "Vos changements ont bien été annulés."
+      }
+    },
+    "failure": {}
+  }
+}

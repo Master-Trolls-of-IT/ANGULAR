@@ -1,0 +1,36 @@
+.modal-title {
+  text-align: center;
+  font-size: 25px;
+  color: #3f51b5;
+  margin-bottom: 20px;
+  font-family: 'Varela Round', sans-serif;
+  font-weight: bold;
+}
+
+@media (max-width: 600px) {
+  .modal-title {
+    font-size: 18px;
+  }
+}
+
+.modal-buttons {
+  align-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+.modal {
+  max-height: 90%;
+  margin: 10px;
+}
+
+.dynamic-height {
+  height: auto;
+}
+
+.description {
+  margin: 0 10px;
+  font-family: 'Varela Round', sans-serif;
+}

@@ -1,0 +1,26 @@
+<div class ="auction-item">
+  <mat-card  class="auction-item-card" matRipple>
+    <mat-card-header class="auction-item-header">
+      <div class="title-and-subtitle">
+        <mat-card-title>{{auctionedItem.title}}</mat-card-title>
+        <mat-card-subtitle>{{chooseRightCategory()}}</mat-card-subtitle>
+      </div>
+    </mat-card-header>
+    <img class="auction-item-image" mat-card-image alt="Pexel Picture" [src]="currentImage">
+    <mat-card-content class="auction-item-content">
+        <ng-container *ngIf="auctionedItem.finalPrice != auctionedItem.currentPrice; else isPurchased">
+            <p class="auction-item-text">{{'pages.auction.price' | translate}} :  <span class="price">{{auctionedItem.currentPrice}} €</span></p>
+            <p class="auction-item-text">{{'pages.auction.timer' | translate}} <br/> <span class="timer">{{timeRemaining | async | date: 'HH:mm:ss': 'UTC'}}</span></p>
+        </ng-container>
+        <ng-template #isPurchased>
+            <p class="auction-item-text">{{'pages.auction.final-price' | translate}} :  <span class="price">{{auctionedItem.currentPrice}} €</span></p>
+        </ng-template>
+    </mat-card-content>
+  </mat-card>
+  <ng-container *ngIf="auctionedItem.photos.length > 1">
+    <img class="arrow-button left" (click)="goPreviousImage()" src="./assets/auction/auction-item/arrow-left.svg" alt="Previous">
+    <img class="arrow-button right" (click)="goNextImage()" src="./assets/auction/auction-item/arrow-right.svg" alt="Next">
+  </ng-container>
+</div>
+
+

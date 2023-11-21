@@ -1,0 +1,94 @@
+<div class="container">
+  <div class="blobs-container">
+    <img src="./assets/login/blobs-wave.svg" alt="Blobs wave"/>
+  </div>
+
+  <div class="content-container">
+    <h2 class="title">{{ 'pages.register.register' | translate }}</h2>
+
+    <div class="form-container">
+      <form class="form-group" [formGroup]="form">
+        <mat-error *ngIf="isFormError">
+          {{ 'pages.register.error' | translate }}
+        </mat-error>
+
+        <div class="form-name">
+          <mat-form-field>
+            <mat-label>{{ 'form.firstname.label' | translate }}</mat-label>
+            <input class="input-field" matInput formControlName="firstname" required (keydown.enter)="onSubmit()">
+            <mat-error *ngIf="form.get('firstname')?.errors">
+              {{ 'form.firstname.error' | translate }}
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field>
+            <mat-label>{{ 'form.lastname.label' | translate }}</mat-label>
+            <input matInput formControlName="lastname" required (keydown.enter)="onSubmit()">
+            <mat-error *ngIf="form.get('lastname')?.errors">
+              {{ 'form.lastname.error' | translate }}
+            </mat-error>
+          </mat-form-field>
+        </div>
+
+        <mat-form-field>
+          <mat-label>{{ 'form.birthdate.label' | translate }}</mat-label>
+          <input matInput [matDatepicker]="picker" [max]="today" formControlName="birthdate" required (keydown.enter)="onSubmit()">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+          <mat-error *ngIf="form.get('birthdate')?.errors">
+            {{ 'form.birthdate.error' | translate }}
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>{{ 'form.email.label' | translate }}</mat-label>
+          <input matInput formControlName="email" required (keydown.enter)="onSubmit()">
+          <mat-error *ngIf="form.get('email')?.errors">
+            {{ 'form.email.error' | translate }}
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>{{ 'form.password.label' | translate }}</mat-label>
+          <input matInput type="password" formControlName="password" required (keydown.enter)="onSubmit()">
+          <mat-error *ngIf="form.get('password')?.errors">
+            {{ 'form.password.error' | translate }}
+          </mat-error>
+        </mat-form-field>
+
+        <div class="avatar-container">
+          <h4>{{ 'pages.register.avatar' | translate }}</h4>
+          <mat-radio-group class="mat-radio-group" formControlName="profilePicture">
+            <mat-radio-button class="mat-radio-button" color="primary" [value]="'avatar-glass-man.svg'">
+              <img src="./assets/pictures/avatar-glass-man.svg" alt="Avatar 1">
+            </mat-radio-button>
+            <mat-radio-button class="mat-radio-button" color="primary" [value]="'avatar-glass-woman.svg'">
+              <img src="./assets/pictures/avatar-glass-woman.svg" alt="Avatar 2">
+            </mat-radio-button>
+            <mat-radio-button class="mat-radio-button" color="primary" [value]="'avatar-suit-man.svg'">
+              <img src="./assets/pictures/avatar-suit-man.svg" alt="Avatar 3">
+            </mat-radio-button>
+            <mat-radio-button class="mat-radio-button" color="primary" [value]="'avatar-red-woman.svg'">
+              <img src="./assets/pictures/avatar-red-woman.svg" alt="Avatar 4">
+            </mat-radio-button>
+          </mat-radio-group>
+        </div>
+
+        <div class="preferences-container">
+          <h4>{{ 'pages.register.preference.label' | translate }}</h4>
+          <div class="checkbox-group">
+            <mat-checkbox color="primary" formControlName="arts">{{ 'pages.register.preference.arts' | translate }}</mat-checkbox>
+            <mat-checkbox color="primary" formControlName="books">{{ 'pages.register.preference.books' | translate }}</mat-checkbox>
+            <mat-checkbox color="primary" formControlName="vehicles">{{ 'pages.register.preference.vehicles' | translate }}</mat-checkbox>
+          </div>
+        </div>
+
+        <div class="button-container">
+          <button type="button" mat-raised-button color="warn" (click)="cancelRegister()">{{ 'button.cancel' | translate }}</button>
+          <button type="button" mat-raised-button color="primary" (click)="onSubmit()">{{ 'button.register' | translate }}</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>

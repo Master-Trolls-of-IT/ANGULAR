@@ -1,0 +1,26 @@
+.page-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.object {
+  font-size: 16px;
+  color: #001122;
+  font-family: 'Varela Round', sans-serif;
+}
+
+.title {
+  font-weight: bold;
+}
+
+.pictures-container {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  overflow-x: auto;
+}
+
+.pictures-container img {
+  height: 150px;
+  width: auto;
+}

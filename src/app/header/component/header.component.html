@@ -1,0 +1,18 @@
+<ng-container *ngIf="isUserAuthenticated">
+  <div class="header-container" *ngIf="showHeader">
+    <div class="content-container">
+      <h2 (click)="goHome()">AUCT|ON PULSE</h2>
+
+      <div class="right-content">
+        <button class="auction-button" mat-raised-button (click)="createAuction()">
+          <mat-icon>add</mat-icon>
+          <span>{{ 'button.auction' | translate }}</span>
+        </button>
+
+        <button class="profile-picture" mat-fab>
+          <img src="./assets/pictures/{{userAuthenticated.profilePicture}}" alt="Profile picture" (click)="openProfile()">
+        </button>
+      </div>
+    </div>
+  </div>
+</ng-container>

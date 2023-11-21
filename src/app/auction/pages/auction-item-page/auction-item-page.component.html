@@ -1,0 +1,54 @@
+<div class="page-container">
+  <app-summary class="summary-container" [auctionItem]="auctionedItem"></app-summary>
+  <div class="auction-container">
+    <p class="auction-item-text">{{'pages.auction.timer' | translate}} :
+      <span class="timer">{{timeRemaining | async | date: 'HH:mm:ss': 'UTC'}}</span>
+    </p>
+
+    <p class="object">
+      <span class="title">{{ 'pages.summary.current-price' | translate }}</span>
+      {{auctionedItem.currentPrice}}€
+    </p>
+
+    <div class="last-bidder">
+      <p class="object">
+        <span class="title">{{ 'pages.summary.bidder' | translate }}</span>
+        {{auctionedItem.lastBidder.firstname}} {{auctionedItem.lastBidder.lastname}}
+      </p>
+    </div>
+
+    <form class="input" [formGroup]="form" *ngIf="auctionedItem.creator != user.email">
+      <mat-error *ngIf="isFormError">
+        {{ 'form.current-price.error-amount' | translate }}
+      </mat-error>
+      <div class="mat-form">
+        <mat-form-field>
+          <mat-label>{{ 'form.current-price.label' | translate }}</mat-label>
+          <input class="input-field" matInput formControlName="currentPrice" required (keydown.enter)="onClickBidButton()">
+          <mat-error *ngIf="form.get('currentPrice')?.errors">
+            {{ 'form.current-price.error' | translate }}
+          </mat-error>
+        </mat-form-field>
+        <button type="button" mat-raised-button color="primary" (click)="onClickBidButton()">{{ 'button.bid' | translate }}</button>
+      </div>
+
+      <div class="mat-form">
+        <mat-form-field>
+          <mat-label>{{ 'form.auto-bid.label' | translate }}</mat-label>
+          <input class="input-field" matInput formControlName="autoBid" required (keydown.enter)="onClickAutoBidding()">
+          <mat-error *ngIf="form.get('autoBid')?.errors">
+            {{ 'form.auto-bid.error' | translate }}
+          </mat-error>
+        </mat-form-field>
+
+        <button type="button" mat-raised-button color="primary" (click)="onClickAutoBidding()">{{ 'button.auto-bid' | translate }}</button>
+      </div>
+
+      <ng-container *ngIf="auctionedItem.finalPrice != 0">
+        <button class="button" type="button" mat-raised-button color="primary" (click)="onClickBuyNowButton()">{{ 'button.buy-now' | translate }}{{auctionedItem.finalPrice}}€</button>
+      </ng-container>
+    </form>
+  </div>
+</div>
+
+

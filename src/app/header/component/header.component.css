@@ -1,0 +1,75 @@
+.header-container {
+  width: 100%;
+  height: 10%;
+  background-color: #009473;
+  display: flex;
+  justify-content: center;
+}
+
+.content-container {
+  width: 95%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.right-content {
+  display: flex;
+  align-self: center;
+  justify-content: space-between;
+}
+
+.header-container h2 {
+  font-size: 44px;
+  font-weight: bold;
+  color: ghostwhite;
+  font-family: 'Varela Round', sans-serif;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+.auction-button {
+  margin-right: 25px;
+  background-color: ghostwhite;
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+}
+
+.auction-button img {
+  width: 15%;
+  height: 80%;
+}
+
+.auction-button span {
+  color: #001122;
+  font-family: 'Varela Round', sans-serif;
+}
+
+.profile-picture {
+  border-width: 1px;
+  background-color: ghostwhite;
+  overflow: hidden;
+}
+
+.profile-picture img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
+@media (max-width: 700px) {
+  .header-container h2 {
+    display: none;
+  }
+
+  .right-content {
+    width: 100%;
+  }
+
+  .auction-button {
+    margin-right: 0;
+  }
+}

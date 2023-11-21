@@ -1,0 +1,82 @@
+.container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  background-color: ghostwhite;
+}
+
+.blobs-container {
+  width: 100%;
+  flex: 3;
+  display: flex;
+  background-color: black;
+  align-items: center;
+  justify-content: center;
+}
+
+.blobs-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.blobs-container p {
+  position: absolute;
+  font-size: 90px;
+  color: ghostwhite;
+  font-family: 'Varela Round', sans-serif;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  flex: 2;
+  background-color: ghostwhite;
+}
+
+.form-container h3 {
+  font-size: 42px;
+  font-weight: bold;
+  color: #007d73;
+  font-family: 'Varela Round', sans-serif;
+  align-self: center;
+  margin-bottom: 2em;
+}
+
+.form-container h2 {
+  color: #001122;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 28px;
+  align-self: center;
+  margin-bottom: 2em;
+  align-items: center;
+}
+
+.form-group {
+  width: 90%;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+@media (max-width: 900px) {
+  .blobs-container {
+    display: none;
+  }
+}
+
+@media (max-width: 460px) {
+  .form-container h3 {
+    font-size: 34px;
+  }
+}

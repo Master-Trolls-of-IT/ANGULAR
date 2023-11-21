@@ -1,0 +1,9 @@
+<div class="page-container">
+  <mat-form-field class='search-form-field'>
+    <input class='search-input' matInput placeholder="{{ 'pages.auction.search' | translate }}" [(ngModel)]="searchText">
+  </mat-form-field>
+
+  <div class="auction-items-container" [class.search-active]="searchText != ''">
+    <app-auctioned-item *ngFor="let item of filteredAuctionedItems" [auctionedItem]="item" [setAuctionedItems]="setAuctionedItems" />
+  </div>
+</div>

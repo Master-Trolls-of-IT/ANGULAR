@@ -1,0 +1,8 @@
+<div class="modal dynamic-height">
+  <h2 class="modal-title">{{ title }}</h2>
+  <p class='description'>{{ message }}</p>
+  <div class="modal-buttons">
+    <button mat-raised-button (click)="onCancelClick()">{{ 'button.cancel' | translate }}</button>
+    <button mat-raised-button color="primary" (click)="onConfirmClick()">{{ 'button.confirm' | translate }}</button>
+  </div>
+</div>
